@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-gold: #C5A059;
+  --color-champagne: #F5E6BE;
+  --color-obsidian: #0A0A0A;
+  --color-charcoal: #141414;
+  --color-zinc-dark: #111111;
+  --color-cream: #F5F5F0;
+}
+
+@layer base {
+  body {
+    @apply bg-obsidian text-cream font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Bento Patterns */
+.bento-card {
+  @apply rounded-lg border border-white/5 bg-charcoal overflow-hidden transition-all duration-500;
+}
+
+.bento-card:hover {
+  @apply border-gold/30;
+}
+
+/* GSAP Utilities */
+.reveal {
+  opacity: 1; /* GSAP will handle initial state */
+}
+
+/* Lenis Smooth Scroll Fixes */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
